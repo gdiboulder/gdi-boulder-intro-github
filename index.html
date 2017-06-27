@@ -9,25 +9,37 @@
 		<meta name="description" content="This is the official Girl Develop It Core Intro to Git and GitHub course. Material based on original material by Kim Moir, Daniel Fischer, Aurelia Moser, Carina C. Zona and Izzy Johnston.
 
     The course is meant to be taught in a two-hour workshop. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
-		<meta name="author" content="Girl Develop It">
+   
+    <meta name="author" content="Girl Develop It">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<link rel="stylesheet" href="reveal/css/reveal.css">
-		<link rel="stylesheet" href="reveal/css/theme/gdicool.css" id="theme">
+    <link rel="stylesheet" href="dist/css/reveal.css">
+    <link rel="stylesheet" href="dist/css/default.css" id="theme">
 
-		<!-- For syntax highlighting -->
-		<!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
-		<!-- dark editor--><link rel="stylesheet" href="reveal/lib/css/dark.css">
+    <!-- For syntax highlighting -->
+    <!-- light editor --><link rel="stylesheet" href="dist/css/light.css">
+    <!-- dark editor <link rel="stylesheet" href="dist/css/dark.css">-->
+    <!-- <link rel="stylesheet" href="dist/css/zenburn.css"> -->
 
-		<!-- If use the PDF print sheet so students can print slides-->
+    <link rel="stylesheet" href="plugin/accessibility-helper/css/accessibility-helper.css">
 
-		<link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
+    <!-- If use the PDF print sheet so students can print slides-->
+
+    <link rel="stylesheet" href="dist/css/print/pdf.css" type="text/css" media="print">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
 	</head>
 
 	<body>
@@ -39,12 +51,12 @@
 			  <!-- Opening slide -->
         <section>
           <img src = "images/gdi_logo_badge.png">
-          <h3>Intro to Git and Github</h3>
+          <h1>Intro to Git and Github</h1>
         </section>
 
         <!-- Welcome-->
         <section>
-          <h3>Welcome!</h3>
+          <h1>Welcome!</h1>
           <div class = "left-align">
           <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
           <p class ="green">Some "rules"</p>
@@ -58,19 +70,35 @@
         </section>
 
         <section>
-          <h3>Welcome!</h3>
+          <h1>Welcome!</h1>
           <div class = "left-align">
           <p class = "blue">Tell us about yourself.</p>
           <ul>
             <li>Who are you?</li>
             <li>What do you hope to get out of the class?</li>
-            <li>Who was your favorite character as a child?</li>
+            <li>WIf you could have an endless supply of any food, what would you get?</li>
           </ul>
           </div>
         </section>
-
+        <!-- Instructors -->
         <section>
-          <h3>What we will cover today</h3>
+          <h1>Your Instructors today</h1>
+          <div style="text-align: left;">
+          <h3>Cara Jo Miller</h3>
+          <ul>
+          <li>Founder: Girl Develop It Boulder/Denver</li>
+          <li>Designer, Developer, Co-Chief Happiness Officer, Guerrilla Marketer at Rachio.</li>
+          <li>Knitter, Photographer, Calligrapher, Artist, &amp; Cat Lover.</li>
+          </ul>
+          <h3 style="margin-top: 50px;">Tim Berglund</h3>
+          <ul>
+          <li>Senior Director of Developer Experience at Confluent</li>
+          </ul>
+          </div>
+
+        </section>
+        <section>
+          <h1>What we will cover today</h1>
           <ul>
             <li class ="fragment">What is version control and why should we care?</li>
             <li class ="fragment">Basics of git -- the essential commands</li>
@@ -79,63 +107,51 @@
         </section>
 
         <!-- Version control-->
-        <section>
           <section>
-            <h3>What is version control?</h3>
+            <h1>What is version control?</h1>
             <p>Version control allows you (and your team) to do two powerful things</p>
             <div class="fragment">
-              <h4>Collaborate</h4>
+              <h3>Collaborate</h3>
               <p>Create anything with other people, from academic papers to entire websites and applications.</p>
             </div>
             <div class="fragment">
-              <h4>Track and revert changes</h4>
+              <h3>Track and revert changes</h3>
               <p>Mistakes happen. Wouldn't it be nice if you could see the changes that have been made and go "back in time" to fix something that went wrong?
             </div>
           </section>
           <section>
-            <h3>Working without Version Control</h3>
-            <img src = "images/no-vc.png" alt = "Trying to make a grocery list with 5 people and no version control"/>
+            <h1>Working without Version Control</h1>
+            <img src = "images/gh-1.png" alt = "Trying to make a grocery list with 5 people and no version control"/>
             <p>The Horror!</p>
           </section>
           <section>
-            <h3>Working with Version Control</h3>
-            <img src = "images/with-vc.png" alt = "Successfully making a grocery list with 5 people and version control"/>
-            <p>Rainbows and bunny rabbits!</h3>
+            <h1>Working with Version Control</h1>
+            <img src = "images/gh-2.png" alt = "Successfully making a grocery list with 5 people and version control"/>
+            <p>Rainbows and bunny rabbits!</h1>
           </section>
-        </section>
-        <section>
           <section>
-            <h3>Brief history of Version Control</h3>
+            <h1>Brief history of Version Control</h1>
             <p><span class ="green">1990s</span> -- CVS (Concurrent Version Systems)</p>
             <p><span class ="green">2000s</span> -- SVN (Apache Subversion)</p>
             <p><span class ="green">2005</span> -- Git (well, Git)</p>
           </section>
           <section>
-            <h3>Version Control Types</h3>
+            <h1>Version Control Types</h1>
             <div class="fragment">
-              <h4>Centralized Version Control</h4>
+              <h3>Centralized Version Control</h3>
               <p>Examples: CVS, SVN</p>
               <p>One central server, each client (person) checks out and merges changes to main server</p>
             </div>
             <div class="fragment">
-              <h4>Distributed Version Control</h4>
+              <h3>Distributed Version Control</h3>
               <p>Examples: Git, Mercurial</p>
               <p>Each client (person) has a local repository, which they can then reconcile with the main server.</p>
             </div>
           </section>
-          <section>
-            <h3>Version Control Velocity</h3>
-            <p>
-              How the popularity of different distributed version control systems have changed since 2010.
-            </p>
-            <a href="http://redmonk.com/sogrady/2015/11/24/dvcs-and-git-2015/" target="_blank">
-              <img src="images/dvcs-change.png" alt="Version control popularity velocity between Bazaar, CVS, Git, Mercurial and Subversion"/>
-            </a>
-          </section>
-        </section>
+          
         <!-- Git-->
         <section>
-          <h3>Intro to Git</h3>
+          <h1>Intro to Git</h1>
           <p>Goals of Git Design</p>
           <ul>
             <li>Fast -- add to your team and code base quickly</li>
@@ -145,16 +161,15 @@
           </ul>
         </section>
         <!-- Installation and Setup-->
-        <section>
           <section>
-            <h3>Installation and Setup</h3>
+            <h1>Installation and Setup</h1>
             <a href = "http://git-scm.com/downloads" alt ="Download latest version of Git" target ="_blank">
               <p>Install git</p>
               <img src = "images/install-git.png" alt = "Download latest version of Git"/>
             </a>
           </section>
           <section>
-            <h3>Installation and Setup</h3>
+            <h1>Installation and Setup</h1>
             <p>Setup ssh keys</p>
             <pre><code contenteditable class ="command-line">
              $ cd ~/.ssh
@@ -170,7 +185,7 @@ Enter passphrase (empty for no passphrase): [Type a passphrase]
             </code></pre>
           </section>
           <section>
-            <h3>Installation and Setup</h3>
+            <h1>Installation and Setup</h1>
             <p>Get SSH Key</p>
             <pre><code contenteditable class ="command-line">
 Your identification has been saved in /Users/you/.ssh/id_rsa.
@@ -180,12 +195,12 @@ Your identification has been saved in /Users/you/.ssh/id_rsa.
             </code></pre>
           </section>
           <section>
-            <h3>Installation and Setup</h3>
+            <h1>Installation and Setup</h1>
             <p>Add SSH Key to Github</p>
             <img src = "images/add-ssh.png" alt ="Steps to add SSH key to github account"/>
           </section>
           <section>
-            <h3>Installation and Setup</h3>
+            <h1>Installation and Setup</h1>
             <p>Setup name and email in gitconfig</p>
             <pre><code contenteditable class ="command-line">
 $ git config --global user.name "Your Name Here"
@@ -199,11 +214,9 @@ $ git config --global user.email "your_email@example.com"
 $ git config --list
             </code></pre>
           </section>
-        </section>
         <!-- First commands-->
-        <section>
           <section>
-            <h3>Your first Local Repository</h3>
+            <h1>Your first Local Repository</h1>
             <p>Go to home directory</p>
             <pre><code contenteditable class ="command-line">
   cd ~/
@@ -220,9 +233,10 @@ $ git config --list
   git init
   git status
             </code></pre>
+            <p>This is still just a directory on your computer</p>
           </section>
           <section>
-            <h3>Add files</h3>
+            <h1>Add files</h1>
             <p>Create a new hello_world.txt file in your new folder</p>
             <p>Check repo status</p>
             <pre><code contenteditable class ="command-line">
@@ -236,7 +250,7 @@ $ git config --list
             <p>File is now tracked by Git</p>
           </section>
           <section>
-            <h3>Changes and commits</h3>
+            <h1>Changes and commits</h1>
             <p>Open hello_world.txt and add some more text</p>
             <pre><code contenteditable class ="command-line">
   git status
@@ -247,11 +261,9 @@ $ git config --list
   git commit -m "First commit. Added hello world to repository."
             </code></pre>
           </section>
-        </section>
         <!-- Explanation-->
-        <section>
           <section>
-            <h3>What did we just do??</h3>
+            <h1>What did we just do??</h1>
             <p>How is this all different than just saving a file?</p>
             <ul>
               <li class="fragment">When we <span class ="green">add</span> a new file, we tell Git to add the file to the repository to be tracked</li>
@@ -261,7 +273,7 @@ $ git config --list
             </ul>
           </section>
           <section>
-            <h3>Look at our progress</h3>
+            <h1>Look at our progress</h1>
             <pre><code contenteditable class ="command-line">
   git log
             </code></pre>
@@ -273,31 +285,24 @@ $ git config --list
       First commit. Added hello world to repository.
               </code></pre>
           </section>
-          <section>
-            <h3>Look at our progress, visually</h3>
-            <pre><code contenteditable class ="command-line">
-  gitk
-            </code></pre>
-            <img src = "images/gitk.png" alt ="Image of commits for this curriculum repo"/>
-          </section>
-        </section>
+          
         <!-- Undoing changes -->
-        <section>
           <section>
-            <h3>Nobody's Perfect</h3>
+            <h1>Nobody's Perfect</h1>
             <h4>Undoing local changes</h4>
             <p>If you haven't committed yet</p>
             <div class = "fragment">
               <p>Open hello_world.txt and add some new text</p>
+              <h4>Change hello_world.txt</h4>
               <pre><code contenteditable class ="command-line">
-  change hello_world.txt
+  
   git checkout hello_world.txt
               </code></pre>
             </div>
             <p class="fragment">Look at hello_world.txt. Your changes are gone.</p>
           </section>
           <section>
-            <h3>Nobody's Perfect</h3>
+            <h1>Nobody's Perfect</h1>
             <h4>Undoing staged changes</h4>
             <div class = "fragment">
               <p>Open hello_world.txt and add some new text</p>
@@ -310,8 +315,8 @@ git checkout hello_world.txt
             <p class="fragment">Look at hello_world.txt. Your changes are gone.</p>
           </section>
           <section>
-            <h3>Nobody's Perfect</h3>
-            <h4>Undoing staged changes</h4>
+            <h1>Nobody's Perfect</h1>
+            <h4>Undoing committed changes</h4>
             <div class = "fragment">
               <p>Open hello_world.txt and add some new text</p>
               <pre><code contenteditable class ="command-line">
@@ -324,7 +329,7 @@ git revert [HASH]
             <p class="fragment">Look at hello_world.txt. Your changes are gone.</p>
           </section>
           <section>
-            <h3>Nobody's Perfect</h3>
+            <h1>Nobody's Perfect</h1>
             <h4>Remove a file from staging</h4>
             <p>Create new file my_new_file.txt</p>
               <pre><code contenteditable class ="command-line">
@@ -333,7 +338,7 @@ git reset my_new_file.txt
               </code></pre>
           </section>
           <section>
-            <h3>Nobody's Perfect</h3>
+            <h1>Nobody's Perfect</h1>
             <h4>Delete a file</h4>
             <p>Create new file my_other_file.txt</p>
             <pre><code contenteditable class ="command-line">
@@ -344,11 +349,9 @@ git add my_other_file.txt
 git rm my_other_file.txt
             </code></pre>
           </section>
-        </section>
         <!-- Branches-->
-        <section>
           <section>
-            <h3>Branching</h3>
+            <h1>Branching</h1>
             <ul>
               <li>Develop different code on the same base</li>
               <li>Conduct exploratory work without affecting the work on master branch</li>
@@ -356,7 +359,7 @@ git rm my_other_file.txt
             </ul>
           </section>
           <section>
-            <h3>Branching</h3>
+            <h1>Branching</h1>
             <p>Create a new branch called version2</p>
             <pre><code contenteditable class ="command-line">
 git checkout -b version2
@@ -368,7 +371,7 @@ git commit -m "Adding changes to version 2"
             </code></pre>
           </section>
           <section>
-            <h3>Branching</h3>
+            <h1>Branching</h1>
             <h4>Switching branches</h4>
             <p>See all branches. Branch with * is active</p>
             <pre><code contenteditable class ="command-line">
@@ -383,21 +386,18 @@ git checkout master
 git checkout version2
             </code></pre>
           </section>
-        </section>
         <!-- Merging-->
-        <section>
           <section>
-            <h3>Merging</h3>
+            <h1>Merging</h1>
             <h4>Merge to get changes from one branch into another*</h4>
             <p>Switch to master and merge changes</p>
             <pre><code contenteditable class ="command-line">
 git checkout master
 git merge version2
             </code></pre>
-            <p>*rebase is another option, but will not be covered in this workshop</p>
           </section>
           <section>
-            <h3>Merging</h3>
+            <h1>Merging</h1>
             <h4>Merge conflicts</h4>
             <p>Change first line in hello_world.txt in master branch</p>
             <pre><code contenteditable class ="command-line">
@@ -413,7 +413,7 @@ git commit -m "Changing first line in version2"
             </code></pre>
           </section>
           <section>
-            <h3>Merging</h3>
+            <h1>Merging</h1>
             <h4>Merge conflicts, cont.</h4>
             <p>Merge from master into version2</p>
             <pre><code contenteditable class ="command-line">
@@ -422,11 +422,9 @@ git merge master
             <p class ="fragment">You will be notified of a conflict. Go to the file and fix the problem. Then commit your edits.</p>
 
           </section>
-        </section>
         <!-- GitHub-->
-        <section>
           <section>
-            <h3><a href = "http://www.github.com" alt="GitHub homepage">GitHub</a></h3>
+            <h1><a href = "http://www.github.com" alt="GitHub homepage">GitHub</a></h1>
             <ul>
               <li class ="fragment">Launched in <span class ="green">2008</span></li>
               <li class = "fragment">Leader in <span class ="green">Social Coding</span></li>
@@ -436,43 +434,40 @@ git merge master
               <li class ="fragment">Use and <span class ="green">learn</span> from the code in other people's repositories</li>
             </ul>
           </section>
-        </section>
         <!-- New repository-->
-        <section>
           <section>
-            <h3>GitHub</h3>
+            <h1>GitHub</h1>
             <h4>Create your first repository</h4>
             <img src = "images/bootcamp_2_newrepo.jpg" alt ="How to create a new repository. Image from https://help.github.com/articles/create-a-repo"/>
           </section>
           <section>
-            <h3>GitHub</h3>
+            <h1>GitHub</h1>
             <h4>Create your first repository</h4>
             <img src = "images/bootcamp_2_repoinfo.png" alt ="How to create a new repository. Image from https://help.github.com/articles/create-a-repo"/>
           </section>
           <section>
-            <h3>GitHub</h3>
+            <h1>GitHub</h1>
             <h4>ReadME</h4>
             <blockquote>
               While a README isn't a required part of a GitHub repository, it is a very good idea to have one. READMEs are a great place to describe your project or add some documentation such as how to install or use your project. You might want to include contact information - if your project becomes popular people will want to help you out.
             </blockquote>
           </section>
           <section>
-            <h3>GitHub</h3>
+            <h1>GitHub</h1>
             <h4>Get Local Repository of GitHub Repo</h4>
             <pre><code contenteditable class ="command-line">
-cd ../ # Back in root directory
-mkdir hello-github
 cd hello-github
-git init
 git remote add origin git@github.com:username/NAME-OF-REPO
-git pull origin master
+git push -m origin master
+
             </code></pre>
           </section>
           <section>
-            <h3>GitHub</h3>
+            <h1>GitHub</h1>
             <h4>Push to GitHub Repo</h4>
-            <p>Edit the ReadMe file
+            <p>Add a ReadMe file
             <pre><code contenteditable class ="command-line">
+// CODE FOR ADDING A READ ME FILE
 git add README
 git commit -m "Updating readme file"
 git push origin master
@@ -480,23 +475,24 @@ git push origin master
             <p class ="fragment">Go look at your github repo online</p>
           </section>
           <section>
-            <h3>GitHub</h3>
+            <h1>GitHub</h1>
             <h4>Pulling from remote repository</h4>
             <p>If you are working with a team, you want to make sure that you have everyone's changes before pushing your changes to the GitHub repo</p>
             <pre><code contenteditable class ="command-line">
 # Commit local changes
 git commit -m "My latest commit"
+# PUSH LOCAL CHANGES UP
+git push 
+# note message
 # Pull changes other people have made
-git pull origin master
+git pull
 # Fix any conflicts (see merge conflicts above) and commit
 git commit -m "Fixing merging conflicts"
 # push local changes to GitHub
-git push origin master
+git push
             </code></pre>
           </section>
-        </section>
         <!-- Fork a repository-->
-        <section>
           <section>
             <h3>Forking</h3>
             <ul>
@@ -526,11 +522,9 @@ git fetch upstream
 # Pulls in changes not present in your local repository, without modifying your files
             </code></pre>
           </section>
-        </section>
         <!-- Pull requests-->
-        <section>
           <section>
-            <h3>Pull Requests</h3>
+            <h1>Pull Requests</h1>
             <ul>
               <li class = "fragment">After you fork and clone a repository all pushed changes will go to your fork</li>
               <li class = "fragment">These changes will not affect the original repository</li>
@@ -538,18 +532,17 @@ git fetch upstream
             </ul>
           </section>
           <section>
-            <h3>Starting a pull request</h3>
+            <h1>Starting a pull request</h1>
             <img src = "images/click-pull-request.png" alt ="How to initiate a pull request. Image from https://help.github.com/articles/using-pull-requests"/>
           </section>
           <section>
-            <h3>Previewing  and sending pull request</h3>
+            <h1>Previewing  and sending pull request</h1>
             <img src = "images/pull-request.png" alt ="How to preview and send a pull request. Image from https://help.github.com/articles/using-pull-requests"/>
           </section>
           <section>
-            <h3>Managing pull requests</h3>
+            <h1>Managing pull requests</h1>
              <p>How to manage pull requests is out of the scope of this short workshop, but you can learn more from the <a href = "https://help.github.com/categories/63/articles" target ="_blank" alt = "Links to tutorials on pull requests and collaboration">Github Collaborating Tutorials</a>
           </section>
-        </section>
         <!-- -->
         <section>
           <h2>Questions?</h2>
@@ -566,33 +559,34 @@ git fetch upstream
 		</div>
 
 
-		<script src="reveal/lib/js/head.min.js"></script>
-		<script src="reveal/js/reveal.min.js"></script>
+		<script src="dist/js/head.min.js"></script>
+    <script src="dist/js/reveal.min.js"></script>
 
-		<script>
+    <script>
 
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'dist/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/accessibility-helper/js/accessibility-helper.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
 
-		</script>
+    </script>
 
 	</body>
 </html>
