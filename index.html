@@ -52,6 +52,11 @@
         <section>
           <img src = "images/gdi_logo_badge.png">
           <h1>Intro to Git and Github</h1>
+          <h2><b>WiFi:</b> SGGuest</h2>
+          <h2><b>Password:</b> GridSend0909</h2>
+        </section>
+        <section>
+          
         </section>
 
         <!-- Welcome-->
@@ -69,17 +74,7 @@
           </div>
         </section>
 
-        <section>
-          <h1>Welcome!</h1>
-          <div class = "left-align">
-          <p class = "blue">Tell us about yourself.</p>
-          <ul>
-            <li>Who are you?</li>
-            <li>What do you hope to get out of the class?</li>
-            <li>WIf you could have an endless supply of any food, what would you get?</li>
-          </ul>
-          </div>
-        </section>
+        
         <!-- Instructors -->
         <section>
           <h1>Your Instructors today</h1>
@@ -93,9 +88,21 @@
           <h3 style="margin-top: 50px;">Tim Berglund</h3>
           <ul>
           <li>Senior Director of Developer Experience at Confluent</li>
+          <li>Developer, Teacher, Poet, Filmmaker</li>
           </ul>
           </div>
 
+        </section>
+        <section>
+          <h1>Welcome!</h1>
+          <div class = "left-align">
+          <p class = "blue">Tell us about yourself.</p>
+
+          <ul>
+            <li>Who are you?</li>
+            <li>What do you hope to get out of the class?</li>
+          </ul>
+          </div>
         </section>
         <section>
           <h1>What we will cover today</h1>
@@ -215,6 +222,9 @@ $ git config --list
             </code></pre>
           </section>
         <!-- First commands-->
+          <section class="title">
+            <h1>Let's Git Started</h1>
+          </section>
           <section>
             <h1>Your first Local Repository</h1>
             <p>Go to home directory</p>
@@ -287,9 +297,12 @@ $ git config --list
           </section>
           
         <!-- Undoing changes -->
+        <section>
+          <h1>Nobody's Perfect</h1>
+        </section>
           <section>
-            <h1>Nobody's Perfect</h1>
-            <h4>Undoing local changes</h4>
+            
+            <h2>Undoing local changes</h2>
             <p>If you haven't committed yet</p>
             <div class = "fragment">
               <p>Open hello_world.txt and add some new text</p>
@@ -302,8 +315,7 @@ $ git config --list
             <p class="fragment">Look at hello_world.txt. Your changes are gone.</p>
           </section>
           <section>
-            <h1>Nobody's Perfect</h1>
-            <h4>Undoing staged changes</h4>
+            <h2>Undoing staged changes</h2>
             <div class = "fragment">
               <p>Open hello_world.txt and add some new text</p>
               <pre><code contenteditable class ="command-line">
@@ -315,8 +327,7 @@ git checkout hello_world.txt
             <p class="fragment">Look at hello_world.txt. Your changes are gone.</p>
           </section>
           <section>
-            <h1>Nobody's Perfect</h1>
-            <h4>Undoing committed changes</h4>
+            <h2>Undoing committed changes</h2>
             <div class = "fragment">
               <p>Open hello_world.txt and add some new text</p>
               <pre><code contenteditable class ="command-line">
@@ -329,8 +340,7 @@ git revert [HASH]
             <p class="fragment">Look at hello_world.txt. Your changes are gone.</p>
           </section>
           <section>
-            <h1>Nobody's Perfect</h1>
-            <h4>Remove a file from staging</h4>
+            <h2>Remove a file from staging</h2>
             <p>Create new file my_new_file.txt</p>
               <pre><code contenteditable class ="command-line">
 git add my_new_file.txt
@@ -338,8 +348,7 @@ git reset my_new_file.txt
               </code></pre>
           </section>
           <section>
-            <h1>Nobody's Perfect</h1>
-            <h4>Delete a file</h4>
+            <h2>Delete a file</h2>
             <p>Create new file my_other_file.txt</p>
             <pre><code contenteditable class ="command-line">
 git add my_other_file.txt
@@ -350,6 +359,9 @@ git rm my_other_file.txt
             </code></pre>
           </section>
         <!-- Branches-->
+          <section>
+            <h1>Branching</h1>
+          </section>
           <section>
             <h1>Branching</h1>
             <ul>
@@ -502,7 +514,7 @@ git push
           </section>
           <section>
             <h3>Forking</h3>
-            <img src = "images/bootcamp_3_fork.jpg" alt ="How to fork a repository. Image from https://help.github.com/articles/fork-a-repo"/>
+            <img src = "images/gh-forking.png" alt ="How to fork a repository. Image from https://help.github.com/articles/fork-a-repo"/>
           </section>
           <section>
             <h3>Forking</h3>
@@ -533,11 +545,11 @@ git fetch upstream
           </section>
           <section>
             <h1>Starting a pull request</h1>
-            <img src = "images/click-pull-request.png" alt ="How to initiate a pull request. Image from https://help.github.com/articles/using-pull-requests"/>
+            <img src = "images/gh-pr.png" alt ="How to initiate a pull request. Image from https://help.github.com/articles/using-pull-requests"/>
           </section>
           <section>
             <h1>Previewing  and sending pull request</h1>
-            <img src = "images/pull-request.png" alt ="How to preview and send a pull request. Image from https://help.github.com/articles/using-pull-requests"/>
+            <img src = "images/gh-pr-list.png" alt ="How to preview and send a pull request. Image from https://help.github.com/articles/using-pull-requests"/>
           </section>
           <section>
             <h1>Managing pull requests</h1>
